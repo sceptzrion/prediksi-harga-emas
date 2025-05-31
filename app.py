@@ -79,10 +79,14 @@ if lag_1_usd and lag_2_usd and kurs_usd_idr:
     selisih = pred_idr_gram - lag_1_idr_gram
     status = "NAIK" if selisih > 0 else "TURUN" if selisih < 0 else "STABIL"
     persentase = (selisih / lag_1_idr_gram) * 100
+    if status == "TURUN":
+        symbol = "-"
+    else:
+        symbol = "+"
 
     st.subheader("Prediksi Harga Emas Besok")
     st.write(f"Prediksi: **Rp{pred_idr_gram:,.0f} / gram**")
-    st.write(f"Diperkirakan harga emas besok akan **{status}** sebesar Rp{abs(selisih):,.0f} / gram ({persentase:.2f}%)")
+    st.write(f"Diperkirakan harga emas besok akan **{status}** sebesar Rp{abs(selisih):,.0f} / gram ({symbol}{abs(persentase):.2f}%)")
 else:
     st.warning("Gagal memuat dashboard. Pastikan koneksi API tersedia.")
 
@@ -109,7 +113,11 @@ if st.button("Prediksi"):
         selisih_sim = pred_idr_gram_sim - sim_lag2_idr_gram
         status_sim = "NAIK" if selisih_sim > 0 else "TURUN" if selisih_sim < 0 else "STABIL"
         persentase_sim = (selisih_sim / sim_lag2_idr_gram) * 100
+        if status_sim == "TURUN":
+            symbol_sim = "-"
+        else:
+            symbol_sim = "+"
 
-        st.success(f"Hasil prediksi harga emas H+1 (besok): **Rp{pred_idr_gram_sim:,.0f} / gram** ({status_sim} sebesar Rp{abs(selisih_sim):,.0f} / gram ({persentase_sim:.2f}%))")
+        st.success(f"Hasil prediksi harga emas H+1 (besok): **Rp{pred_idr_gram_sim:,.0f} / gram** ({status_sim} sebesar Rp{abs(selisih_sim):,.0f} / gram ({symbol_sim}{abs(persentase_sim):.2f}%))")
     else:
         st.warning("Kurs tidak tersedia, prediksi tidak dapat dilakukan.")
