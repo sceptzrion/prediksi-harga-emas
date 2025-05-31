@@ -126,5 +126,5 @@ if st.button("Prediksi"):
 #          TENTANG
 # ===========================
 st.markdown("---")
-st.caption("🔍 Aplikasi ini menampilkan prediksi harga emas untuk hari berikutnya menggunakan algoritma **Linear Regression** berdasarkan data harga penutupan dua hari sebelumnya.")
-st.caption("🧑‍💻 Proyek ini dikembangkan dalam rangka UTS mata kuliah **Machine Learning**, dan dibuat oleh **Kelompok 5**.")
+st.caption("*Aplikasi ini menampilkan prediksi harga emas untuk hari berikutnya menggunakan algoritma **Linear Regression** berdasarkan data harga penutupan dua hari sebelumnya.")
+st.caption("Proyek ini dikembangkan oleh **Kelompok 5** dalam mata kuliah **Machine Learning**.")
