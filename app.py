@@ -121,3 +121,10 @@ if st.button("Prediksi"):
         st.success(f"Hasil prediksi harga emas H+1 (besok): **Rp{pred_idr_gram_sim:,.0f} / gram** ({status_sim} sebesar Rp{abs(selisih_sim):,.0f} / gram ({symbol_sim}{abs(persentase_sim):.2f}%))")
     else:
         st.warning("Kurs tidak tersedia, prediksi tidak dapat dilakukan.")
+
+# ===========================
+#          TENTANG
+# ===========================
+st.markdown("---")
+st.caption("🔍 Aplikasi ini menampilkan prediksi harga emas untuk hari berikutnya menggunakan algoritma **Linear Regression** berdasarkan data harga penutupan dua hari sebelumnya.")
+st.caption("🧑‍💻 Proyek ini dikembangkan dalam rangka UTS mata kuliah **Machine Learning**, dan dibuat oleh **Kelompok 5**.")
