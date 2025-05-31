@@ -68,8 +68,15 @@ if lag_1_usd and lag_2_usd and kurs_usd_idr:
     lag_1_idr_gram = usd_ounce_to_idr_gram(lag_1_usd, kurs_usd_idr)
     lag_2_idr_gram = usd_ounce_to_idr_gram(lag_2_usd, kurs_usd_idr)
 
+    selisih_realtime = lag_1_idr_gram - lag_2_idr_gram
+    persentase_realtime = (selisih_realtime / lag_2_idr_gram) * 100
+    if selisih_realtime < 0:
+        symbol_realtime = "-"
+    else:
+        symbol_realtime = "+"
+
     st.metric("Harga Emas Kemarin", f"Rp{lag_2_idr_gram:,.0f} / gram")
-    st.metric("Harga Emas Hari Ini", f"Rp{lag_1_idr_gram:,.0f} / gram")
+    st.metric("Harga Emas Hari Ini", f"Rp{lag_1_idr_gram:,.0f} / gram ({symbol_realtime}{abs(persentase_realtime):.2f}%)")
     st.caption(f"*dalam kurs 1 USD → IDR per hari ini: Rp{kurs_usd_idr:,.0f}")
 
     # Prediksi dalam USD
