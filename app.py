@@ -76,7 +76,7 @@ if lag_1_usd and lag_2_usd and kurs_usd_idr:
         symbol_realtime = "+"
 
     st.metric("Harga Emas Kemarin", f"Rp{lag_2_idr_gram:,.0f} / gram")
-    st.metric("Harga Emas Hari Ini", f"Rp{lag_1_idr_gram:,.0f} / gram", f"{symbol_realtime} Rp{abs(selisih_realtime):,.0f} ({symbol_realtime}{abs(persentase_realtime):.2f}%)")
+    st.metric("Harga Emas Hari Ini", f"Rp{lag_1_idr_gram:,.0f} / gram", f"({symbol_realtime}{abs(persentase_realtime):.2f}%)")
     st.caption(f"*dalam kurs 1 USD → IDR per hari ini: Rp{kurs_usd_idr:,.0f}")
 
     # Prediksi dalam USD
