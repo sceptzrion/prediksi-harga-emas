@@ -1,6 +1,6 @@
 # Prediksi Harga Emas dengan Linear Regression (Streamlit App)
 
-Aplikasi ini merupakan proyek Ujian Tengah Semester (UTS) untuk mata kuliah **Machine Learning**, yang dikembangkan oleh **Kelompok 5**. Aplikasi ini memanfaatkan algoritma **Linear Regression** untuk memprediksi harga emas per gram dalam mata uang **Rupiah (IDR)** berdasarkan harga historis dua hari sebelumnya.
+Aplikasi ini merupakan proyek mata kuliah **Machine Learning**, yang dikembangkan oleh **Kelompok 5**. Aplikasi ini memanfaatkan algoritma **Linear Regression** untuk memprediksi harga emas per gram dalam mata uang **Rupiah (IDR)** berdasarkan harga historis dua hari sebelumnya.
 
 ---
 
