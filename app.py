@@ -6,18 +6,26 @@ from datetime import datetime, timedelta
 
 # MENGAMBIL TANGGAL HARI SEBELUMNYA
 def yesterday(frmt='%Y-%m-%d', string=True):
-    yesterday = datetime.now() - timedelta(2)
+    yesterday = datetime.now() - timedelta(3)
     if string:
         return yesterday.strftime(frmt)
     return yesterday
 
 YESTERDAY_DATE = yesterday()
 
+def latest(frmt='%Y-%m-%d', string=True):
+    yesterday = datetime.now() - timedelta(2)
+    if string:
+        return yesterday.strftime(frmt)
+    return yesterday
+
+LATEST_DATE = latest()
+
 # KONFIGURASI API
 METAL_API_KEY = st.secrets["METAL_API_KEY"]
 CURRENCY_API_KEY = st.secrets["CURRENCY_API_KEY"]
 
-URL_LATEST = f"https://api.metalpriceapi.com/v1/latest?api_key={METAL_API_KEY}&base=USD&currencies=XAU"
+URL_LATEST = f"https://api.metalpriceapi.com/v1/lat{LATEST_DATE}?api_key={METAL_API_KEY}&base=USD&currencies=XAU"
 URL_YESTERDAY = f"https://api.metalpriceapi.com/v1/{YESTERDAY_DATE}?api_key={METAL_API_KEY}&base=USD&currencies=XAU"
 URL_KURS = f"https://api.currencyapi.com/v3/latest?apikey={CURRENCY_API_KEY}&currencies=IDR"
 
