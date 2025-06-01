@@ -14,11 +14,12 @@ def yesterday(frmt='%Y-%m-%d', string=True):
 YESTERDAY_DATE = yesterday()
 
 # KONFIGURASI API
-METAL_API_KEY = st.secrets["METAL_API_KEY"]
+METAL_LATEST_API_KEY = st.secrets["METAL_LATEST_API_KEY"]
+METAL_YESTERDAY_API_KEY = st.secrets["METAL_YESTERDAY_API_KEY"]
 CURRENCY_API_KEY = st.secrets["CURRENCY_API_KEY"]
 
-URL_LATEST = f"https://api.metalpriceapi.com/v1/latest?api_key={METAL_API_KEY}&base=USD&currencies=XAU"
-URL_YESTERDAY = f"https://api.metalpriceapi.com/v1/{YESTERDAY_DATE}?api_key={METAL_API_KEY}&base=USD&currencies=XAU"
+URL_LATEST = f"https://api.metalpriceapi.com/v1/latest?api_key={METAL_LATEST_API_KEY}&base=USD&currencies=XAU"
+URL_YESTERDAY = f"https://api.metalpriceapi.com/v1/{YESTERDAY_DATE}?api_key={METAL_YESTERDAY_API_KEY}&base=USD&currencies=XAU"
 URL_KURS = f"https://api.currencyapi.com/v3/latest?apikey={CURRENCY_API_KEY}&currencies=IDR"
 
 # KONVERSI EMAS & KURS
